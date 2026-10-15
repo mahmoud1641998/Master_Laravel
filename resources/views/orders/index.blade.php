@@ -132,7 +132,7 @@
             </table>
         </div>
 
-        {{ $orders->withQueryString()->links() }}
+         {{ $orders->withQueryString()->links('pagination::bootstrap-5') }}
     </div>
 </div>
 @endsection

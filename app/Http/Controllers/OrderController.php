@@ -40,7 +40,7 @@ class OrderController extends Controller
             'customer_id',
             'category_id',
         ])) {
-            $query->whereDate('order_date', today());
+            $query->whereDate('order_date','>=', '1999-12-31');  
         }
 
         $orders = $query
