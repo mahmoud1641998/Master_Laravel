@@ -46,10 +46,10 @@
 
     {{-- Top Navbar --}}
     <nav class="navbar navbar-dark bg-dark px-3 px-md-4">
-        <a class="navbar-brand fw-semibold"
-           href="{{ Route::has('orders.index') ? route('orders.index') : url('/') }}">
+        <a class="navbar-brand fw-semibold" href="{{ url('/') }}">
             E-Commerce System
         </a>
+    
 
         <div class="ms-auto d-flex align-items-center gap-3">
             @auth
@@ -93,6 +93,11 @@
                     </h6>
 
                     <nav class="nav flex-column">
+
+                        <a href="{{ url('/') }}"
+                            class="nav-link {{ request()->is('/') ? 'active' : '' }}">
+                                Home
+                        </a>
 
                         <a href="{{ route('orders.index') }}"
                            class="nav-link {{ request()->routeIs('orders.*') ? 'active' : '' }}">
