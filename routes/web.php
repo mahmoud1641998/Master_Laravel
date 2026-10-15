@@ -1,15 +1,20 @@
+
 <?php
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\users;
 use App\Http\Controllers\category;
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/users', [users::class, 'index']);
-
-Route::get('/category', [category::class, 'index']);
+use App\Http\Controllers\OrderController;
 
 
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+*/
+
+// Redirect the home page to the orders page
+Route::redirect('/', '/orders');
+
+// Orders Routes
+Route::resource('orders', OrderController::class );
